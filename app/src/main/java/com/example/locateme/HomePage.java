@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomePage extends AppCompatActivity implements View.OnClickListener {
-    ImageView hnotification, hmap, hcontacts, hsettings;
+    ImageView hnotification, hmap, hcontacts, hsettings, exit;
 
 
     @Override
@@ -19,6 +19,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         hmap = (ImageView) findViewById(R.id.imageView20);
         hcontacts = (ImageView) findViewById(R.id.imageView21);
         hsettings = (ImageView) findViewById(R.id.imageView22);
+        exit = (ImageView) findViewById(R.id.imageView43);
 
         hnotification.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +50,14 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
             public void onClick(View view) {
                 Intent HometoSettingIn = new Intent(HomePage.this, Seetings.class);
                 startActivity(HometoSettingIn);
+            }
+        });
+        exit.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent HometoFirstPage = new Intent(HomePage.this, MainActivity.class);
+                startActivity(HometoFirstPage);
             }
         });
 
