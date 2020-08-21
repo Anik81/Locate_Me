@@ -42,8 +42,8 @@
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="323dp"
-        android:layout_height="54dp"
+        android:layout_width="317dp"
+        android:layout_height="55dp"
         android:background="@drawable/grp3"
         android:ems="10"
         android:hint="Password"
