@@ -28,7 +28,7 @@
         android:layout_height="55dp"
         android:background="@drawable/grp"
         android:ems="10"
-        android:hint="User Name"
+        android:hint="Email Address"
         android:inputType="textPersonName"
         android:paddingLeft="80dp"
         android:textColor="#000"
@@ -60,8 +60,8 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="205dp"
-        android:layout_height="57dp"
+        android:layout_width="317dp"
+        android:layout_height="59dp"
         android:background="@drawable/loginbtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,25 +72,25 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="13dp"
-        android:layout_height="22dp"
+        android:layout_width="28dp"
+        android:layout_height="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintHorizontal_bias="0.229"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28"
-        app:srcCompat="@drawable/symboluser" />
+        app:layout_constraintVertical_bias="0.282"
+        app:srcCompat="@drawable/signmail" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="16dp"
-        android:layout_height="32dp"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.251"
+        app:layout_constraintHorizontal_bias="0.235"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393"
+        app:layout_constraintVertical_bias="0.396"
         app:srcCompat="@drawable/symbolpass" />
 </androidx.constraintlayout.widget.ConstraintLayout>
