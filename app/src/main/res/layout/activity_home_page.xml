@@ -21,7 +21,7 @@
         android:id="@+id/imageView10"
         android:layout_width="378dp"
         android:layout_height="162dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,9 +59,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.152"
+        app:layout_constraintVertical_bias="0.14"
         app:srcCompat="@drawable/shakymbl" />
 
     <ImageView
@@ -147,7 +148,50 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logoutbtn" />
+
+
+    <TextView
+        android:id="@+id/L1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="242dp"
+        android:text="Location"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/L2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="283dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="307dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Locality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="341dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="379dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
