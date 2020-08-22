@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "53907338769",
+    "firebase_url": "https://locate-me-12ce3.firebaseio.com",
+    "project_id": "locate-me-12ce3",
+    "storage_bucket": "locate-me-12ce3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53907338769:android:732d583108ef6f26f7a3b0",
+        "android_client_info": {
+          "package_name": "com.example.locateme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53907338769-k80b1gba1colf2jp3d6mah50si5u3dp9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmf0EqtZ-89GoAFL493yvsYqNlysG8wwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53907338769-k80b1gba1colf2jp3d6mah50si5u3dp9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
