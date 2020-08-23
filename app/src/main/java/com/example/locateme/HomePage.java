@@ -8,7 +8,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
@@ -38,7 +37,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
     private boolean isAccelerometerSensorAvailable,itIsNotFirstTime=false;
     private  float currentX,currentY,currentZ,lastX,lastY,lastZ;
     private  float xDiff,yDiff,zDiff;
-    private float Shake= 20f;
+    private float Shake = 15f;
     private Vibrator vibrator;
     private TextView L1, L2, Country, Locality, Address;
     FusedLocationProviderClient fusedLocationProviderClient;
@@ -136,14 +135,14 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
                 if(location != null)
                 {
                     try {
-                        Geocoder geocoder= new Geocoder(HomePage.this, Locale.getDefault());
-                        List<android.location.Address> addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
+                        Geocoder geocoder = new Geocoder(HomePage.this, Locale.getDefault());
+                        List<android.location.Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
 
-                        L1.setText("Latitude :" + addresses.get(0).getLatitude());
-                        L2.setText("Longitude :" + addresses.get(0).getLongitude());
-                        Country.setText("Country Name :" + addresses.get(0).getCountryName());
-                        Locality.setText("Locality :" + addresses.get(0).getLocality());
-                        Address.setText("Address :" + addresses.get(0).getAddressLine(0));
+                        L1.setText("Latitude : " + addresses.get(0).getLatitude());
+                        L2.setText("Longitude : " + addresses.get(0).getLongitude());
+                        Country.setText("Country Name : " + addresses.get(0).getCountryName());
+                        Locality.setText("Locality : " + addresses.get(0).getLocality());
+                        Address.setText("Address : " + addresses.get(0).getAddressLine(0));
 
                     } catch (IOException e) {
                         e.printStackTrace();
