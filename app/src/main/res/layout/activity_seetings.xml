@@ -7,19 +7,6 @@
     tools:context=".Seetings">
 
     <ImageView
-        android:id="@+id/imageView36"
-        android:layout_width="410dp"
-        android:layout_height="677dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="49dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/peight" />
-
-    <ImageView
         android:id="@+id/imageView37"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -78,4 +65,115 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.998"
         app:srcCompat="@drawable/settingsbtn" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="169dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="772dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/seetings" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="415dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="153dp"
+        android:layout_marginBottom="604dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/myprofile" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="415dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="595dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="189dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sabout" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="415dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginBottom="497dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/snotification" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="415dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="367dp"
+        android:layout_marginBottom="390dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/sgeneral" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="415dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="474dp"
+        android:layout_marginBottom="283dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/accountsetting" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="52dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="354dp"
+        android:layout_marginBottom="756dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="18dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="398dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginBottom="772dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/moree" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
