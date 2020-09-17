@@ -3,12 +3,14 @@ package com.example.locateme;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Seetings extends AppCompatActivity implements View.OnClickListener {
     ImageView Shome, Snotification, Smap, Scontacts;
+    ImageButton MyProfile, About;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,8 @@ public class Seetings extends AppCompatActivity implements View.OnClickListener 
         Snotification = (ImageView) findViewById(R.id.imageView38);
         Smap = (ImageView) findViewById(R.id.imageView39);
         Scontacts = (ImageView) findViewById(R.id.imageView40);
+        MyProfile = (ImageButton) findViewById(R.id.imageButton);
+        About = (ImageButton) findViewById(R.id.imageButton2);
 
         Shome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +50,21 @@ public class Seetings extends AppCompatActivity implements View.OnClickListener 
             public void onClick(View view) {
                 Intent SetiingsToContacts = new Intent(Seetings.this, Contacts.class);
                 startActivity(SetiingsToContacts);
+            }
+        });
+        MyProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent SetiingsToMyProfile = new Intent(Seetings.this, ShowMyProfile.class);
+                startActivity(SetiingsToMyProfile);
+            }
+        });
+
+        About.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent SetiingsToAbout = new Intent(Seetings.this, AboutApp.class);
+                startActivity(SetiingsToAbout);
             }
         });
     }
