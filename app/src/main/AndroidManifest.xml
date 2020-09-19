@@ -31,7 +31,13 @@
         <activity android:name=".HomePage" />
         <activity android:name=".SignUpPage" />
         <activity android:name=".loginpage" />
+        <activity android:name=".policeStationNumber"/>
+        <activity android:name=".emergencyNumber"/>
+        <activity android:name=".fireBrigadeNumber"/>
+        <activity android:name=".RABnumber"/>
+        <activity android:name=".hospitalNumber"/>
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

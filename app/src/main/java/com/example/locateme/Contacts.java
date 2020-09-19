@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Contacts extends AppCompatActivity implements View.OnClickListener {
     ImageView Chome, Cnotification, Cmap, Csettings;
-    ImageButton emergency, hospital, policeStation, RAB, fireBrigade;
+    ImageButton emergency, hospital, policeStation, rab, fireBrigade;
 
 
     @Override
@@ -27,7 +27,7 @@ public class Contacts extends AppCompatActivity implements View.OnClickListener 
         emergency= (ImageButton)findViewById(R.id.imageButton6);
         hospital=(ImageButton) findViewById(R.id.imageButton8);
         policeStation=(ImageButton) findViewById(R.id.imageButton7);
-        RAB=(ImageButton) findViewById(R.id.imageButton9);
+        rab=(ImageButton) findViewById(R.id.imageButton9);
         fireBrigade=(ImageButton) findViewById(R.id.imageButton10);
 
         emergency.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +51,7 @@ public class Contacts extends AppCompatActivity implements View.OnClickListener 
                 startActivity(policeNum);
             }
         });
-        RAB.setOnClickListener(new View.OnClickListener() {
+        rab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent rabNum = new Intent(Contacts.this, RABnumber.class);
