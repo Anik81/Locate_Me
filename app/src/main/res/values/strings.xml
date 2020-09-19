@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Locate Me</string>
+    <string name="google_map_key" />
+    <string name="google_map_ke">AIzaSyC0kQJw0FkqzS58AoXxsESm_ClCh7Z3cUw</string>
 </resources>

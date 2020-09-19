@@ -16,12 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fireBrigadeNumber"></activity>
-        <activity android:name=".emergencyNumber" />
-        <activity android:name=".hospitalNumber" />
-        <activity android:name=".RABnumber" />
-        <activity android:name=".policeStationNumber" />
-        <activity android:name=".AboutApp" />
+        <activity android:name=".AboutApp"></activity>
         <activity android:name=".EditProfile" />
         <activity android:name=".ShowMyProfile" />
 

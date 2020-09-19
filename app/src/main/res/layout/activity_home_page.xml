@@ -230,5 +230,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.963"
         tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/Time"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="2500dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="333dp"
+        android:textColor="#FF0202"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

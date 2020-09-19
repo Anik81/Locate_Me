@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "295437534124",
+    "firebase_url": "https://locate-me-c5f66.firebaseio.com",
+    "project_id": "locate-me-c5f66",
+    "storage_bucket": "locate-me-c5f66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295437534124:android:84402ba1c7000d4af9f009",
+        "android_client_info": {
+          "package_name": "com.example.locateme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295437534124-0eklv06i3d9s21828n5g12l1fsl9l9ch.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.locateme",
+            "certificate_hash": "d334ca0e5235788c9f31ce99bb36da134740da71"
+          }
+        },
+        {
+          "client_id": "295437534124-pojf0h6ai65joh4n9hh1viu235gk3tp9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9Gwb6p0blBNi_wwNXRUXkTJFWQtstyxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295437534124-pojf0h6ai65joh4n9hh1viu235gk3tp9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
