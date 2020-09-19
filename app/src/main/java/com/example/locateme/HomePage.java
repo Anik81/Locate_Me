@@ -10,12 +10,16 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Geocoder;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,8 +43,12 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
     private  float xDiff,yDiff,zDiff;
     private float Shake = 15f;
     private Vibrator vibrator;
-    private TextView L1, L2, Country, Locality, Address;
+    private TextView L1, L2, Country, Locality, Address,time;
     FusedLocationProviderClient fusedLocationProviderClient;
+    CountDownTimer countDownTimer;
+
+    private double latitude,longtitude;
+    private String CN,locality,add,sms;
 
 
     @Override
@@ -57,7 +65,33 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
         Country = findViewById(R.id.Country);
         Locality = findViewById(R.id.Locality);
         Address = findViewById(R.id.Address);
+        time = findViewById(R.id.Time);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        countDownTimer = new CountDownTimer(10000,1000) {
+            @Override
+            public void onTick(long l) {
+                time.setText(l/1000+" Sec");
+
+            }
+
+            @Override
+            public void onFinish() {
+
+                time.setText("Message is sending");
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                {
+                    if(checkSelfPermission(Manifest.permission.SEND_SMS)== PackageManager.PERMISSION_GRANTED)
+                    {
+                        sendSMS();
+                    }
+                    else
+                    {
+                        requestPermissions(new String[]{Manifest.permission.SEND_SMS},1);
+                    }
+                }
+
+            }
+        };
 
         hnotification.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +144,8 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
             isAccelerometerSensorAvailable=false;
         }
 
+
+
     }
 
     @Override
@@ -143,6 +179,12 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
                         Country.setText("Country Name : " + addresses.get(0).getCountryName());
                         Locality.setText("Locality : " + addresses.get(0).getLocality());
                         Address.setText("Address : " + addresses.get(0).getAddressLine(0));
+                        latitude=addresses.get(0).getLatitude();
+                        longtitude = addresses.get(0).getLongitude();
+                        CN=addresses.get(0).getCountryName();
+                        locality=addresses.get(0).getLocality();
+                        add=addresses.get(0).getAddressLine(0);
+
 
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -171,6 +213,8 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
                 vibrator.vibrate(VibrationEffect.createOneShot(500,VibrationEffect.DEFAULT_AMPLITUDE));
                 if (ActivityCompat.checkSelfPermission(HomePage.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     getLocation();
+                    countDownTimer.start();
+
                 } else {
                     ActivityCompat.requestPermissions(HomePage.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
                 }
@@ -207,5 +251,12 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
             sensorManager.unregisterListener(this);
 
 
+    }
+    private void sendSMS(){
+
+         sms= "I'm in Danger.My Current Location is, Latitude : "+latitude+"Longitude : "+longtitude+"Country Name : "+CN+"Locality : "+locality+"Address : "+add+" Please come ASAP and help me" ;
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage("01314764932",null,sms,null,null);
+        Toast.makeText(this,"Message is send",Toast.LENGTH_SHORT).show();
     }
 }
