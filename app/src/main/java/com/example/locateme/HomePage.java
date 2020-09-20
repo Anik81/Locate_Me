@@ -36,19 +36,20 @@ import java.util.Locale;
 
 public class HomePage extends AppCompatActivity implements View.OnClickListener, SensorEventListener {
     ImageView hnotification, hmap, hcontacts, hsettings, exit;
-    private SensorManager sensorManager;
-    private Sensor accelerometerSensor;
-    private boolean isAccelerometerSensorAvailable,itIsNotFirstTime=false;
-    private  float currentX,currentY,currentZ,lastX,lastY,lastZ;
-    private  float xDiff,yDiff,zDiff;
-    private float Shake = 15f;
-    private Vibrator vibrator;
-    private TextView L1, L2, Country, Locality, Address,time;
+    SensorManager sensorManager;
+    Sensor accelerometerSensor;
+    boolean isAccelerometerSensorAvailable, itIsNotFirstTime = false;
+    float currentX, currentY, currentZ, lastX, lastY, lastZ;
+    float xDiff, yDiff, zDiff;
+    float Shake = 15f;
+    Vibrator vibrator;
+    TextView L1, L2, Country, Locality, Address, time;
     FusedLocationProviderClient fusedLocationProviderClient;
     CountDownTimer countDownTimer;
 
-    private double latitude,longtitude;
-    private String CN,locality,add,sms;
+    double latitude, longtitude;
+    String CN, locality, add, sms;
+    int check = 0;
 
 
     @Override
@@ -67,28 +68,26 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
         Address = findViewById(R.id.Address);
         time = findViewById(R.id.Time);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        countDownTimer = new CountDownTimer(10000,1000) {
+        countDownTimer = new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long l) {
-                time.setText(l/1000+" Sec");
+                // time.setText(l/1000+" Sec");
 
             }
 
             @Override
             public void onFinish() {
 
-                time.setText("Message is sending");
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                //time.setText("Message is sending");
+                check = 1;
+               /* if(checkSelfPermission(Manifest.permission.SEND_SMS)== PackageManager.PERMISSION_GRANTED)
                 {
-                    if(checkSelfPermission(Manifest.permission.SEND_SMS)== PackageManager.PERMISSION_GRANTED)
-                    {
-                        sendSMS();
-                    }
-                    else
-                    {
-                        requestPermissions(new String[]{Manifest.permission.SEND_SMS},1);
-                    }
+                    sendSMS();
                 }
+                else
+                {
+                    requestPermissions(new String[]{Manifest.permission.SEND_SMS},1);
+                }*/
 
             }
         };
@@ -136,14 +135,12 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
-        if(sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)!=null)
-        {
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
             accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-            isAccelerometerSensorAvailable=true;
-        }else {
-            isAccelerometerSensorAvailable=false;
+            isAccelerometerSensorAvailable = true;
+        } else {
+            isAccelerometerSensorAvailable = false;
         }
-
 
 
     }
@@ -152,6 +149,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
     public void onClick(View view) {
 
     }
+
     private void getLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -168,8 +166,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
             @Override
             public void onComplete(@NonNull Task<Location> task) {
                 Location location = task.getResult();
-                if(location != null)
-                {
+                if (location != null) {
                     try {
                         Geocoder geocoder = new Geocoder(HomePage.this, Locale.getDefault());
                         List<android.location.Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
@@ -179,11 +176,11 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
                         Country.setText("Country Name : " + addresses.get(0).getCountryName());
                         Locality.setText("Locality : " + addresses.get(0).getLocality());
                         Address.setText("Address : " + addresses.get(0).getAddressLine(0));
-                        latitude=addresses.get(0).getLatitude();
+                        latitude = addresses.get(0).getLatitude();
                         longtitude = addresses.get(0).getLongitude();
-                        CN=addresses.get(0).getCountryName();
-                        locality=addresses.get(0).getLocality();
-                        add=addresses.get(0).getAddressLine(0);
+                        CN = addresses.get(0).getCountryName();
+                        locality = addresses.get(0).getLocality();
+                        add = addresses.get(0).getAddressLine(0);
 
 
                     } catch (IOException e) {
@@ -198,22 +195,27 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        currentX=event.values[0];
-        currentY=event.values[1];
-        currentZ=event.values[2];
+        currentX = event.values[0];
+        currentY = event.values[1];
+        currentZ = event.values[2];
 
-        if(itIsNotFirstTime)
-        {
-            xDiff= Math.abs(lastX-currentX);
-            yDiff= Math.abs(lastY-currentY);
-            zDiff= Math.abs(lastZ-currentZ);
+        if (itIsNotFirstTime) {
+            xDiff = Math.abs(lastX - currentX);
+            yDiff = Math.abs(lastY - currentY);
+            zDiff = Math.abs(lastZ - currentZ);
 
-            if((xDiff > Shake && yDiff > Shake) || (xDiff > Shake && zDiff > Shake) || (yDiff > Shake && zDiff > Shake))
-            {
-                vibrator.vibrate(VibrationEffect.createOneShot(500,VibrationEffect.DEFAULT_AMPLITUDE));
+            if ((xDiff > Shake && yDiff > Shake) || (xDiff > Shake && zDiff > Shake) || (yDiff > Shake && zDiff > Shake)) {
+                vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
                 if (ActivityCompat.checkSelfPermission(HomePage.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     getLocation();
-                    countDownTimer.start();
+                    // countDownTimer.start();
+
+                    if (checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
+                        sendSMS();
+                    } else {
+                        requestPermissions(new String[]{Manifest.permission.SEND_SMS}, 1);
+                    }
+
 
                 } else {
                     ActivityCompat.requestPermissions(HomePage.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
@@ -222,10 +224,10 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
             }
 
         }
-        lastX=currentX;
-        lastY=currentY;
-        lastZ=currentZ;
-        itIsNotFirstTime=true;
+        lastX = currentX;
+        lastY = currentY;
+        lastZ = currentZ;
+        itIsNotFirstTime = true;
 
     }
 
@@ -237,9 +239,8 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
     @Override
     protected void onResume() {
         super.onResume();
-        if(isAccelerometerSensorAvailable)
-        {
-            sensorManager.registerListener(this,accelerometerSensor,SensorManager.SENSOR_DELAY_NORMAL);
+        if (isAccelerometerSensorAvailable) {
+            sensorManager.registerListener(this, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL);
         }
 
     }
@@ -247,16 +248,17 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
     @Override
     protected void onPause() {
         super.onPause();
-        if(isAccelerometerSensorAvailable)
+        if (isAccelerometerSensorAvailable)
             sensorManager.unregisterListener(this);
 
 
     }
-    private void sendSMS(){
 
-         sms= "I'm in Danger.My Current Location is, Latitude : "+latitude+"Longitude : "+longtitude+"Country Name : "+CN+"Locality : "+locality+"Address : "+add+" Please come ASAP and help me" ;
+    public void sendSMS() {
+
+                sms = "I'm in Danger.My Current Location is, Latitude : " + latitude + "Longitude : " + longtitude + "Country Name : " + CN + "Locality : " + locality + "Address : " + add + " Please come ASAP and help me";
         SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage("01314764932",null,sms,null,null);
+        smsManager.sendTextMessage("+8801314764932",null,sms,null,null);
         Toast.makeText(this,"Message is send",Toast.LENGTH_SHORT).show();
     }
 }
