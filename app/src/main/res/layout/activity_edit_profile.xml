@@ -26,27 +26,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.624" />
 
-    <EditText
-        android:id="@+id/editPhoneNumber"
-        android:layout_width="317dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="522dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginBottom="287dp"
-        android:background="@drawable/textboxuser"
-        android:ems="10"
-        android:hint="Enter your Phone Number"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textColorHint="#000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616" />
 
     <EditText
         android:id="@+id/editUserName"
@@ -90,6 +69,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.616" />
+
+    <EditText
+        android:id="@+id/editPhoneNumber"
+        android:layout_width="317dp"
+        android:layout_height="55dp"
+        android:background="@drawable/textboxuser"
+        android:ems="10"
+        android:hint="Enter your Phone Number"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.649" />
 
     <Button
         android:id="@+id/button6"

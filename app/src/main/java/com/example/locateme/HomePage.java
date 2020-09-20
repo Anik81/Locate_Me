@@ -268,7 +268,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
 
          sms= "I'm in Danger.My Current Location is, Latitude : "+latitude+"Longitude : "+longtitude+"Country Name : "+CN+"Locality : "+locality+"Address : "+add+" Please come ASAP and help me" ;
         SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage("+8801314764932",null,sms,null,null);
+        smsManager.sendTextMessage("+8801984645332",null,sms,null,null);
         Toast.makeText(this,"Message is send",Toast.LENGTH_SHORT).show();
     }
 }
