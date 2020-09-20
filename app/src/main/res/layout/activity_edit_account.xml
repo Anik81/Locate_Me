@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowMyProfile">
+    tools:context=".editAccount">
 
     <TextView
         android:id="@+id/textView"
@@ -14,17 +14,17 @@
         android:layout_marginTop="303dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="510dp"
-        android:text="Abu Tarek Rabbi"
+        android:text="USER NAME"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintHorizontal_bias="0.696"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.136" />
 
     <TextView
         android:id="@+id/textView2"
@@ -32,26 +32,24 @@
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="26dp"
-        android:text="Rabbi_86"
+        android:text="FULL NAME"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.525" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="390dp"
         android:layout_height="50dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="492dp"
         android:layout_marginBottom="353dp"
-        android:text="tarekrabbi04@gmail.com"
+        android:text="EMAIL ID"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="25dp"
@@ -59,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintVertical_bias="0.353" />
 
     <TextView
         android:id="@+id/textView4"
@@ -69,7 +67,7 @@
         android:layout_marginTop="571dp"
         android:layout_marginEnd="191dp"
         android:layout_marginBottom="274dp"
-        android:text="01984645332"
+        android:text="PHONE NUMBER"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="25dp"
@@ -79,7 +77,23 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintVertical_bias="0.42" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="707dp"
+        android:layout_marginBottom="109dp"
+        android:background="@drawable/btnuttonbg"
+        android:text="Edit Profile"
+        android:textColor="#fff"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606" />
 
     <ImageButton
         android:id="@+id/imageButton12"

@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AboutApp"></activity>
+        <activity android:name=".editAccount"></activity>
+        <activity android:name=".AboutApp" />
         <activity android:name=".EditProfile" />
         <activity android:name=".ShowMyProfile" />
 
@@ -31,13 +33,12 @@
         <activity android:name=".HomePage" />
         <activity android:name=".SignUpPage" />
         <activity android:name=".loginpage" />
-        <activity android:name=".policeStationNumber"/>
-        <activity android:name=".emergencyNumber"/>
-        <activity android:name=".fireBrigadeNumber"/>
-        <activity android:name=".RABnumber"/>
-        <activity android:name=".hospitalNumber"/>
+        <activity android:name=".policeStationNumber" />
+        <activity android:name=".emergencyNumber" />
+        <activity android:name=".fireBrigadeNumber" />
+        <activity android:name=".RABnumber" />
+        <activity android:name=".hospitalNumber" />
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

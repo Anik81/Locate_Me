@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Seetings extends AppCompatActivity implements View.OnClickListener {
     ImageView Shome, Snotification, Smap, Scontacts;
-    ImageButton MyProfile, About;
+    ImageButton MyProfile, About, account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,15 @@ public class Seetings extends AppCompatActivity implements View.OnClickListener 
         Scontacts = (ImageView) findViewById(R.id.imageView40);
         MyProfile = (ImageButton) findViewById(R.id.imageButton);
         About = (ImageButton) findViewById(R.id.imageButton2);
+        account= findViewById(R.id.imageButton5);
+
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent accountSetting = new Intent(Seetings.this, editAccount.class);
+                startActivity(accountSetting);
+            }
+        });
 
         Shome.setOnClickListener(new View.OnClickListener() {
             @Override

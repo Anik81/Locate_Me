@@ -32,7 +32,7 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
                 String phoneNumber= phone.getText().toString();
                 String emailAddress= email.getText().toString();
 
-                Intent saveNewProfile = new Intent(EditProfile.this, ShowMyProfile.class);
+                Intent saveNewProfile = new Intent(EditProfile.this, editAccount.class);
                 saveNewProfile.putExtra("keyUserName", editUserName);
                 saveNewProfile.putExtra("keyfullName", fullName);
                 saveNewProfile.putExtra("keyphoneNumber", phoneNumber);

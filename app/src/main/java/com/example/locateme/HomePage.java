@@ -39,16 +39,16 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
     private SensorManager sensorManager;
     private Sensor accelerometerSensor;
     private boolean isAccelerometerSensorAvailable,itIsNotFirstTime=false;
-    private  float currentX,currentY,currentZ,lastX,lastY,lastZ;
-    private  float xDiff,yDiff,zDiff;
-    private float Shake = 15f;
+      float currentX,currentY,currentZ,lastX,lastY,lastZ;
+      float xDiff,yDiff,zDiff;
+      float Shake = 15f;
     private Vibrator vibrator;
     private TextView L1, L2, Country, Locality, Address,time;
     FusedLocationProviderClient fusedLocationProviderClient;
     CountDownTimer countDownTimer;
 
     private double latitude,longtitude;
-    private String CN,locality,add,sms;
+    String CN,locality,add,sms;
 
 
     @Override
@@ -67,6 +67,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
         Address = findViewById(R.id.Address);
         time = findViewById(R.id.Time);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+
         countDownTimer = new CountDownTimer(10000,1000) {
             @Override
             public void onTick(long l) {
@@ -78,7 +79,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
             public void onFinish() {
 
                 time.setText("Message is sending");
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                /*if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
                 {
                     if(checkSelfPermission(Manifest.permission.SEND_SMS)== PackageManager.PERMISSION_GRANTED)
                     {
@@ -88,7 +89,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
                     {
                         requestPermissions(new String[]{Manifest.permission.SEND_SMS},1);
                     }
-                }
+                }*/
 
             }
         };
@@ -214,6 +215,17 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
                 if (ActivityCompat.checkSelfPermission(HomePage.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     getLocation();
                     countDownTimer.start();
+                    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                    {
+                        if(checkSelfPermission(Manifest.permission.SEND_SMS)== PackageManager.PERMISSION_GRANTED)
+                        {
+                            sendSMS();
+                        }
+                        else
+                        {
+                            requestPermissions(new String[]{Manifest.permission.SEND_SMS},1);
+                        }
+                    }
 
                 } else {
                     ActivityCompat.requestPermissions(HomePage.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
@@ -256,7 +268,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener,
 
          sms= "I'm in Danger.My Current Location is, Latitude : "+latitude+"Longitude : "+longtitude+"Country Name : "+CN+"Locality : "+locality+"Address : "+add+" Please come ASAP and help me" ;
         SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage("01314764932",null,sms,null,null);
+        smsManager.sendTextMessage("+8801314764932",null,sms,null,null);
         Toast.makeText(this,"Message is send",Toast.LENGTH_SHORT).show();
     }
 }
